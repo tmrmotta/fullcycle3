@@ -15,7 +15,8 @@ jobs:
               with:
                 go-version: ${{ matrix.go }}
             
-            - run: cd src-content/4-IntegracaoContinua/DockerCI && go test 
+            - run: cd src-content/4-IntegracaoContinua/DockerCI 
+            - run: go test 
             - run: go run math.go
 
             - name: Set up QEMY 
