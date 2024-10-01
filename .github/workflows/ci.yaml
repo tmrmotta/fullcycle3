@@ -9,13 +9,16 @@ jobs:
             matrix:
                 go: ['1.14','1.15']
 
+        defaults:
+          run:
+            working-directory: src-content/4-IntegracaoContinua/DockerCI
+
         steps: 
             - uses: actions/checkout@v2
             - uses: actions/setup-go@v2
               with:
                 go-version: ${{ matrix.go }}
             
-            - run: cd src-content/4-IntegracaoContinua/DockerCI 
             - run: go test 
             - run: go run math.go
 
